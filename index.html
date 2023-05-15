@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,27 @@
     <link rel="stylesheet" href="style.css">
     <title>Convert To Webp</title>
 </head>
+
 <body>
-    
+
+    <div class="container">
+        <div>
+            <input type="file" id="img-file-input">
+            <button id="convert-button">Convert</button>
+        </div>
+        <div class="options">
+            <div>
+                <label for="img-width">Width:</label>
+                <input type="number" value="960" id="img-width">
+            </div>
+            <div>
+                <label for="img-height">Width:</label>
+                <input type="number" value="540" id="img-height">
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
+
 </html>
