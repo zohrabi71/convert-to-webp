@@ -7,8 +7,8 @@ async function convertToWebp(file, quality = 0.8) {
   });
 
   const canvas = document.createElement("canvas");
-  canvas.width = document.getElementById(img-width).valueAsNumber; // Set desired width
-  canvas.height = document.getElementById(img-height).valueAsNumber; // Set desired height
+  canvas.width = document.getElementById('img-width').valueAsNumber; // Set desired width
+  canvas.height = document.getElementById('img-height').valueAsNumber; // Set desired height
   const context = canvas.getContext("2d");
 
   // Draw image on canvas with specified dimensions
@@ -34,7 +34,13 @@ convertButton.addEventListener("click", async () => {
   }
 
   const webpBlob = await convertToWebp(file);
+  createDownloadButton(webpBlob) 
+})
+
+function createDownloadButton(webpBlob) {
   const downloadButton = document.getElementById("download-converted-img-btn");
+  console.log(webpBlob)
+  
   downloadButton.href = URL.createObjectURL(webpBlob);
   downloadButton.style.display = "inline-block"; // Show download button after conversion
-});
+}

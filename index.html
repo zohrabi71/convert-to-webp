@@ -12,18 +12,23 @@
 <body>
 
     <div class="container">
-        <div>
-            <input type="file" id="img-file-input">
-            <button id="convert-button">Convert</button>
-        </div>
-        <div class="options">
+        <div class="card">
             <div>
-                <label for="img-width">Width:</label>
-                <input type="number" value="960" id="img-width">
+                <input type="file" id="img-file-input">
+                <button id="convert-button">Convert</button>
+            </div>
+            <div class="options">
+                <div>
+                    <label for="img-width">Width:</label>
+                    <input type="number" value="960" id="img-width">
+                </div>
+                <div>
+                    <label for="img-height">Width:</label>
+                    <input type="number" value="540" id="img-height">
+                </div>
             </div>
             <div>
-                <label for="img-height">Width:</label>
-                <input type="number" value="540" id="img-height">
+                <a href="" id="download-converted-img-btn" style="display: none;">Download Image</a>
             </div>
         </div>
     </div>
