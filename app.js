@@ -7,8 +7,8 @@ async function convertToWebp(file, quality = 0.8) {
   });
 
   const canvas = document.createElement("canvas");
-  canvas.width = 960; // Set desired width
-  canvas.height = 540; // Set desired height
+  canvas.width = document.getElementById(img-width).valueAsNumber; // Set desired width
+  canvas.height = document.getElementById(img-height).valueAsNumber; // Set desired height
   const context = canvas.getContext("2d");
 
   // Draw image on canvas with specified dimensions
