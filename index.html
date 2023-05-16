@@ -15,7 +15,7 @@
         <div class="card">
             <div>
                 <input type="file" id="img-file-input">
-                <button id="convert-button">Convert</button>
+                <input type="url" id="img-url-input" placeholder="Paste Image Link">
             </div>
             <div class="options">
                 <div>
@@ -23,16 +23,16 @@
                     <input type="number" value="960" id="img-width">
                 </div>
                 <div>
-                    <label for="img-height">Width:</label>
+                    <label for="img-height">Height:</label>
                     <input type="number" value="540" id="img-height">
                 </div>
             </div>
-            <div>
-                <a href="" id="download-converted-img-btn" style="display: none;">Download Image</a>
+            <div class="buttons">
+                <button id="convert-button">Convert</button>
+                <a href="" id="download-converted-img-btn" target="_blank" download="image.webp" style="display: none;">Download Image</a>
             </div>
         </div>
     </div>
-
     <script src="app.js"></script>
 </body>
 

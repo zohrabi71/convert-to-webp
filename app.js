@@ -23,24 +23,36 @@ async function convertToWebp(file, quality = 0.8) {
   return webpBlob;
 }
 
+
 const convertButton = document.getElementById("convert-button");
 convertButton.addEventListener("click", async () => {
   const fileInput = document.getElementById("img-file-input");
   const file = fileInput.files[0];
+  const urlInput = document.getElementById("img-url-input");
+  const url = urlInput.value;
 
-  // Need to upload a file
-  if(!file) {
-    return alert('Select a file please!')
+  // Need to upload a file or provide a URL
+  if(!file && !url) {
+    return alert('Select a file or provide a URL please!');
   }
 
-  const webpBlob = await convertToWebp(file);
-  createDownloadButton(webpBlob) 
+  let webpBlob;
+
+  if (file) {
+    webpBlob = await convertToWebp(file);
+  } else {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    webpBlob = await convertToWebp(blob);
+  }
+
+  createDownloadButton(webpBlob); 
 })
+
 
 function createDownloadButton(webpBlob) {
   const downloadButton = document.getElementById("download-converted-img-btn");
-  console.log(webpBlob)
-  
+
   downloadButton.href = URL.createObjectURL(webpBlob);
   downloadButton.style.display = "inline-block"; // Show download button after conversion
 }
